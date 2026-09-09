@@ -3,21 +3,11 @@ document.querySelector(".menu")?.addEventListener("click",()=>document.querySele
 
 const brandLogo=document.querySelector(".brand img");
 if(brandLogo){
-  brandLogo.src="/assets/mis-mechanical-logo.jpg?v=9";
-  brandLogo.style.width="190px";
-  brandLogo.style.height="88px";
+  brandLogo.src="/assets/mis-mechanical-logo.jpg?v=10";
+  brandLogo.style.width="205px";
+  brandLogo.style.height="92px";
   brandLogo.style.objectFit="contain";
   brandLogo.style.filter="none";
-}
-const footerLogo=document.querySelector(".footer>img");
-if(footerLogo){
-  footerLogo.src="/assets/mis-mechanical-logo.jpg?v=9";
-  footerLogo.style.content="none";
-  footerLogo.style.width="175px";
-  footerLogo.style.height="150px";
-  footerLogo.style.objectFit="contain";
-  footerLogo.style.mixBlendMode="multiply";
-  footerLogo.style.filter="brightness(2.2) saturate(1.15) contrast(1.08)";
 }
 
 const reviewGrid=document.getElementById("reviewGrid");
