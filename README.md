@@ -9,4 +9,4 @@ This version follows the approved visual direction:
 - Email: info@mismechanical.ca
 - Instagram: @mismechanical
 
-The service-photo areas are intentionally simple for now; real licensed web photos can be added/selected later.
+The service section uses the exact approved reference image for General Plumbing, while the approved Mechanical & Heating and Drain & Waste visuals remain unchanged.
