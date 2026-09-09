@@ -1,13 +1,13 @@
 document.getElementById("year").textContent=new Date().getFullYear();
 document.querySelector(".menu")?.addEventListener("click",()=>document.querySelector(".nav nav").classList.toggle("mobile-open"));
 
-const logoUrl="/assets/mis-mechanical-logo.jpg?v=1";
+const logoUrl="/assets/mis-mechanical-logo-footer.png?v=6";
 document.querySelector(".brand img")?.setAttribute("src",logoUrl);
 document.querySelector(".footer>img")?.setAttribute("src",logoUrl);
 const brandLogo=document.querySelector(".brand img");
-if(brandLogo){brandLogo.style.width="190px";brandLogo.style.height="88px";brandLogo.style.objectFit="contain"}
+if(brandLogo){brandLogo.style.width="190px";brandLogo.style.height="88px";brandLogo.style.objectFit="contain";brandLogo.style.filter="brightness(1.65) saturate(1.2) contrast(1.08)"}
 const footerLogo=document.querySelector(".footer>img");
-if(footerLogo){footerLogo.style.width="175px";footerLogo.style.height="150px";footerLogo.style.objectFit="contain";footerLogo.style.mixBlendMode="multiply"}
+if(footerLogo){footerLogo.style.width="175px";footerLogo.style.height="150px";footerLogo.style.objectFit="contain";footerLogo.style.filter="brightness(1.8) saturate(1.2) contrast(1.08) drop-shadow(0 0 2px rgba(255,255,255,.18))"}
 
 const reviewGrid=document.getElementById("reviewGrid");
 const reviewCards=reviewGrid?[...reviewGrid.children]:[];
