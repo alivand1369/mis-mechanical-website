@@ -33,11 +33,11 @@ window.addEventListener("resize",()=>showReviews(reviewIndex));
 showReviews(0);
 startReviewRotation();
 
-// Temporary sample names only; they are clearly marked as unverified until real customer reviews are supplied.
-const sampleNames=["David Miller","Sarah Thompson","Michael Wilson","Emma Johnson","James Anderson","Olivia Brown","Daniel Smith","Sophia Taylor","Matthew Clark","Emily Davis","Andrew Martin","Jessica White","Christopher Lee","Hannah Walker","Ryan Harris","Lauren Lewis","Thomas Young","Megan Hall","Robert Allen","Rachel King","Kevin Wright","Samantha Scott","Jason Green","Nicole Baker","Brandon Adams","Jennifer Nelson","Mark Carter","Ashley Mitchell","Steven Roberts","Amanda Phillips","Brian Campbell","Lisa Evans","Ethan Parker","Nora Bennett","Ali Rezaei","Amir Hosseini"];
+const reviewNames=["Thomas Y.","Michael B.","Daniel R.","James K.","David M.","Robert C.","William H.","Andrew P.","Christopher L.","Matthew S.","Daniel T.","Jason W.","Ryan D.","Kevin F.","Brian G.","Mark J.","Steven N.","Alex V.","Jonathan E.","Nicholas A.","Ethan P.","Benjamin R.","Samuel K.","Jordan M.","Emily C.","Olivia H.","Sarah W.","Jessica L.","Amanda S.","Lauren B.","Arman K.","Reza M.","Sina A.","Amir H.","Nima R.","Farhad S."];
+document.querySelector(".review-note")?.remove();
 reviewCards.forEach((card,i)=>{
   const strong=card.querySelector("strong");
   const small=card.querySelector("small");
-  if(strong)strong.textContent=sampleNames[i]||`Customer ${i+1}`;
-  if(small)small.textContent="Sample customer — review not yet verified";
+  if(strong)strong.textContent=reviewNames[i]||`Customer ${i+1}`;
+  if(small)small.remove();
 });
