@@ -68,7 +68,7 @@ window.addEventListener("resize",()=>showReviews(reviewIndex));
 showReviews(0);
 startReviewRotation();
 
-const reviewNames=["Thomas Y.","Michael B.","Daniel R.","James K.","David M.","Robert C.","William H.","Andrew P.","Christopher L.","Matthew S.","Daniel T.","Jason W.","Ryan D.","Kevin F.","Brian G.","Mark J.","Steven N.","Alex V.","Jonathan E.","Nicholas A.","Ethan P.","Benjamin R.","Samuel K.","Jordan M.","Emily C.","Olivia H.","Sarah W.","Jessica L.","Amanda S.","Lauren B.","Arman K.","Reza M.","Sina A.","Amir H.","Nima R.","Farhad S."];
+const reviewNames=["Thomas Y.","Michael","Daniel R.","James","David M.","Robert","William H.","Andrew","Christopher L.","Matthew","Daniel T.","Jason","Ryan D.","Kevin","Brian G.","Mark","Steven N.","Alex","Jonathan E.","Nicholas","Ethan P.","Benjamin","Samuel K.","Jordan","Emily C.","Olivia","Sarah W.","Jessica","Amanda S.","Lauren","Arman K.","Reza","Sina A.","Amir","Nima R.","Farhad"];
 document.querySelector(".review-note")?.remove();
 reviewCards.forEach((card,i)=>{
   const strong=card.querySelector("strong");
