@@ -35,6 +35,13 @@ schemaScript.type="application/ld+json";
 schemaScript.textContent=JSON.stringify(schema);
 document.head.appendChild(schemaScript);
 
+// Persian-language SEO page link.
+const persianLink=document.createElement("a");
+persianLink.href="/persian-plumber-vancouver.html";
+persianLink.textContent="فارسی | لوله کش ونکوور";
+persianLink.style.cssText="display:inline-block;margin:8px 12px;font-weight:700";
+document.querySelector("footer .footer")?.appendChild(persianLink);
+
 const brandLogo=document.querySelector(".brand img");
 if(brandLogo){
   brandLogo.src="/assets/mis-mechanical-logo.jpg?v=12";
