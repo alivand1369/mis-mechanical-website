@@ -42,3 +42,29 @@ reviewCards.forEach((card,i)=>{
   if(strong)strong.textContent=reviewNames[i]||`Customer ${i+1}`;
   if(small)small.remove();
 });
+
+const serviceForm=document.querySelector(".service-form");
+serviceForm?.addEventListener("submit",async event=>{
+  event.preventDefault();
+  const button=serviceForm.querySelector("button[type=submit]");
+  const originalText=button?.textContent||"Send Request →";
+  if(button){button.disabled=true;button.textContent="Sending...";}
+  const data=Object.fromEntries(new FormData(serviceForm).entries());
+  data._subject="New Service Request — MIS Mechanical Ltd.";
+  data._replyto=data.Email||"";
+  try{
+    const response=await fetch("https://formsubmit.co/ajax/info@mismechanical.ca",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify(data)
+    });
+    const result=await response.json();
+    if(!response.ok||result.success===false)throw new Error("Form submission failed");
+    serviceForm.reset();
+    alert("Thank you. Your service request has been sent to MIS Mechanical Ltd.");
+  }catch(error){
+    alert("Sorry, we couldn't send your request. Please call 236-867-7060 or email info@mismechanical.ca.");
+  }finally{
+    if(button){button.disabled=false;button.textContent=originalText;}
+  }
+});
