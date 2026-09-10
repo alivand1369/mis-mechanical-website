@@ -1,6 +1,40 @@
 document.getElementById("year").textContent=new Date().getFullYear();
 document.querySelector(".menu")?.addEventListener("click",()=>document.querySelector(".nav nav").classList.toggle("mobile-open"));
 
+// Homepage SEO: clearer search intent and LocalBusiness structured data.
+document.title="Plumber Vancouver, BC | MIS Mechanical Ltd.";
+const description=document.querySelector('meta[name="description"]');
+if(description)description.setAttribute("content","MIS Mechanical Ltd. provides professional plumbing, emergency plumbing, drain, heating and mechanical services in Vancouver and Metro Vancouver, BC.");
+const heroTitle=document.querySelector(".hero-copy h1");
+if(heroTitle)heroTitle.innerHTML="Professional Plumbing<br><span>and Heating Services in Vancouver.</span>";
+const heroText=document.querySelector(".hero-copy p");
+if(heroText)heroText.textContent="MIS Mechanical Ltd. provides dependable plumbing, emergency plumbing, heating and mechanical services for residential and commercial properties across Vancouver and Metro Vancouver.";
+const serviceDescriptions=document.querySelectorAll(".service-body p");
+if(serviceDescriptions[0])serviceDescriptions[0].textContent="Plumbing repairs, installations and maintenance for homes and businesses in Vancouver and Metro Vancouver.";
+if(serviceDescriptions[1])serviceDescriptions[1].textContent="Heating and mechanical installation, repair and maintenance for residential and commercial properties.";
+if(serviceDescriptions[2])serviceDescriptions[2].textContent="Drain cleaning, drain repair and waste system services for homes and businesses.";
+const schema={
+  "@context":"https://schema.org",
+  "@type":"Plumber",
+  "name":"MIS Mechanical Ltd.",
+  "url":"https://mismechanical.ca/",
+  "logo":"https://mismechanical.ca/assets/mis-mechanical-logo.jpg",
+  "image":"https://mismechanical.ca/assets/boiler-hero.jpg",
+  "telephone":"+1-236-867-7060",
+  "email":"info@mismechanical.ca",
+  "description":"Professional plumbing, emergency plumbing, heating and mechanical services in Vancouver and Metro Vancouver, BC.",
+  "areaServed":{
+    "@type":"AdministrativeArea",
+    "name":"Metro Vancouver, British Columbia, Canada"
+  },
+  "serviceType":["Plumbing","Emergency Plumbing","Drain Cleaning","Heating Services","Mechanical Services"],
+  "sameAs":["https://www.instagram.com/mismechanical/"]
+};
+const schemaScript=document.createElement("script");
+schemaScript.type="application/ld+json";
+schemaScript.textContent=JSON.stringify(schema);
+document.head.appendChild(schemaScript);
+
 const brandLogo=document.querySelector(".brand img");
 if(brandLogo){
   brandLogo.src="/assets/mis-mechanical-logo.jpg?v=12";
