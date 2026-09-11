@@ -62,7 +62,7 @@ reviewCards.forEach((card,i)=>{
 const serviceForm=document.querySelector(".service-form");
 serviceForm?.addEventListener("submit",async event=>{
   event.preventDefault();
-  const button=serviceForm.querySelector("button[type=submit");
+  const button=serviceForm.querySelector("button[type=submit]");
   const originalText=button?.textContent||"Send Request →";
   if(button){button.disabled=true;button.textContent="Sending...";}
   const data=Object.fromEntries(new FormData(serviceForm).entries());
