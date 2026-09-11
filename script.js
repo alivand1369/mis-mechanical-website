@@ -1,18 +1,21 @@
 document.getElementById("year").textContent=new Date().getFullYear();
 document.querySelector(".menu")?.addEventListener("click",()=>document.querySelector(".nav nav").classList.toggle("mobile-open"));
 
-// Homepage SEO: clearer search intent.
-document.title="Plumber Vancouver, BC | MIS Mechanical Ltd.";
-const description=document.querySelector('meta[name="description"]');
-if(description)description.setAttribute("content","MIS Mechanical Ltd. provides professional plumbing, emergency plumbing, drain, heating and mechanical services in Vancouver and Metro Vancouver, BC.");
-const heroTitle=document.querySelector(".hero-copy h1");
-if(heroTitle)heroTitle.innerHTML="Professional Plumbing<br><span>and Heating Services in Vancouver.</span>";
-const heroText=document.querySelector(".hero-copy p");
-if(heroText)heroText.textContent="MIS Mechanical Ltd. provides dependable plumbing, emergency plumbing, heating and mechanical services for residential and commercial properties across Vancouver and Metro Vancouver.";
-const serviceDescriptions=document.querySelectorAll(".service-body p");
-if(serviceDescriptions[0])serviceDescriptions[0].textContent="Plumbing repairs, installations and maintenance for homes and businesses in Vancouver and Metro Vancouver.";
-if(serviceDescriptions[1])serviceDescriptions[1].textContent="Heating and mechanical installation, repair and maintenance for residential and commercial properties.";
-if(serviceDescriptions[2])serviceDescriptions[2].textContent="Drain cleaning, drain repair and waste system services for homes and businesses.";
+// Homepage-only SEO content. Service pages keep their own unique titles, descriptions and copy.
+const isHomepage=!!document.getElementById("home");
+if(isHomepage){
+  document.title="Plumber Vancouver, BC | MIS Mechanical Ltd.";
+  const description=document.querySelector('meta[name="description"]');
+  if(description)description.setAttribute("content","MIS Mechanical Ltd. provides professional plumbing, emergency plumbing, drain, heating and mechanical services in Vancouver and Metro Vancouver, BC.");
+  const heroTitle=document.querySelector(".hero-copy h1");
+  if(heroTitle)heroTitle.innerHTML="Professional Plumbing<br><span>and Heating Services in Vancouver.</span>";
+  const heroText=document.querySelector(".hero-copy p");
+  if(heroText)heroText.textContent="MIS Mechanical Ltd. provides dependable plumbing, emergency plumbing, heating and mechanical services for residential and commercial properties across Vancouver and Metro Vancouver.";
+  const serviceDescriptions=document.querySelectorAll(".service-body p");
+  if(serviceDescriptions[0])serviceDescriptions[0].textContent="Plumbing repairs, installations and maintenance for homes and businesses in Vancouver and Metro Vancouver.";
+  if(serviceDescriptions[1])serviceDescriptions[1].textContent="Heating and mechanical installation, repair and maintenance for residential and commercial properties.";
+  if(serviceDescriptions[2])serviceDescriptions[2].textContent="Drain cleaning, drain repair and waste system services for homes and businesses.";
+}
 
 const brandLogo=document.querySelector(".brand img");
 if(brandLogo){
@@ -59,7 +62,7 @@ reviewCards.forEach((card,i)=>{
 const serviceForm=document.querySelector(".service-form");
 serviceForm?.addEventListener("submit",async event=>{
   event.preventDefault();
-  const button=serviceForm.querySelector("button[type=submit]");
+  const button=serviceForm.querySelector("button[type=submit");
   const originalText=button?.textContent||"Send Request →";
   if(button){button.disabled=true;button.textContent="Sending...";}
   const data=Object.fromEntries(new FormData(serviceForm).entries());
